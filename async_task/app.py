@@ -80,15 +80,6 @@ def _generate_test_json(name, first, second):
         fd.write(json.dumps(data, indent=2))
 
 
-def before_start():
-    task_id = uuid.uuid4()
-    tasks[task_id] = None
-
-
-def after_complete(task_id):
-    tasks.pop(task_id)
-
-
 @app.route('/start_task')
 def start_task():
     task_id = str(uuid.uuid4())

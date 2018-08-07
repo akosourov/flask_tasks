@@ -86,7 +86,7 @@ def start_task():
     print('starting task ', task_id, ' thread ', threading.get_ident())
     thread = threading.Thread(target=call_sources_task, args=(task_id,))
     thread.start()
-    return str(task_id)
+    return task_id
 
 
 @app.route('/check_task/<task_id>')

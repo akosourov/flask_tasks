@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}User{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="username">Username</label>
+    <input name="username" id="username" required value="{{ username }}">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required value="{{ password }}">
+    <label for="role">Role</label>
+    <input name="role" id="role" required value="{{ role }}">
+    <input type="submit" value="Update">
+  </form>
+{% endblock %}

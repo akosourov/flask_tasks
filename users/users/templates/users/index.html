@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Users list{% endblock %}</h1>
+    <a class="action" href="{{ url_for('users.create') }}">Add user</a>
+{% endblock %}
+
+{% block content %}
+  {% for user in users_list %}
+    <article class="post">
+      <header>
+        <div>
+          <h1>{{ user['username'] }}</h1>
+          <div class="about">User role is {{ user['role'] }}</div>
+        </div>
+        <a class="action" href="{{ url_for('users.update', user_id=user['id']) }}">Edit</a>
+      </header>
+      <p class="body"></p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

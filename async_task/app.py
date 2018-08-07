@@ -11,7 +11,7 @@ SOURCE_TIMEOUT = 2   # seconds
 
 app = Flask(__name__)
 
-# tasks is in-memory storage, map task_id to processed task.
+# tasks is in-memory storage, maps task_id to processed task.
 # If value is None it means that task is still in progress
 # shared across requests, thread-safe due to GIL in CPython
 tasks = {}
